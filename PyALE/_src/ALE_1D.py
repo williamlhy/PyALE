@@ -30,7 +30,6 @@ def aleplot_1D_continuous(X, model, feature, grid_size=20, include_CI=True, C=0.
     quantiles = np.linspace(0, 1, grid_size + 1, endpoint=True)
     # use customized quantile function to get the same result as
     # type 1 R quantile (Inverse of empirical distribution function)
-    print("?????????????????????")
     bins = [X[feature].min()] + quantile_ied(X[feature].squeeze(), quantiles).to_list()
     bins = np.unique(bins)
     feat_cut = pd.cut(X[feature], bins, include_lowest=True)
